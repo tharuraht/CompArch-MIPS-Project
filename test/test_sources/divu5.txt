@@ -1,0 +1,15 @@
+#divu5
+#divu
+#am9717
+#dividing zero by constant and checks LO
+#0
+#
+
+addi $16, $16, 6
+divu $0, $16
+sll $0, $0, 0
+sll $0, $0, 0  
+mflo $2
+jr $0
+
+#Expected: 0

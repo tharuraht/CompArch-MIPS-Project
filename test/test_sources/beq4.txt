@@ -1,0 +1,16 @@
+#beq4
+#beq
+#ta2617
+#Check delayed branch
+#100
+#
+#
+
+addi $12, $12, 20
+beq $16, $17, 8
+addi $2, $0, 50
+add $2, $2, $2
+add $2, $2, $2
+jr $0
+
+#Expected: 100

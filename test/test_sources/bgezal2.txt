@@ -1,0 +1,17 @@
+#bgezal2
+#bgezal
+#ta2617
+#Checks link register (no branch)
+#12
+#
+#
+
+addi $16, $16, -2
+bgezal $16, 8
+sll $0, $0, 0
+sll $0, $0, 0
+sll $0, $0, 0
+add $2, $2, $31
+jr $0
+
+#Expected: 12

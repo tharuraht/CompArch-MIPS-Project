@@ -1,0 +1,17 @@
+#bltzal3
+#bltzal
+#am9717
+#NO branching and checks link
+#12
+#
+#
+
+addi $16, $16, 3
+bgezal $16, 8
+sll $0, $0, 0
+sll $0, $0, 0
+sll $0, $0, 0
+add $2, $2, $31
+jr $0
+
+#Expected: 12

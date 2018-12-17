@@ -1,0 +1,18 @@
+#jal3
+#jal
+#am9717
+#Jumps with delay slot 
+#12
+#
+#
+
+
+addiu $2, $0, 12
+jal 16
+sll $0, $0, 0
+addi $2, $2, 12
+jr $0
+sll $0, $0, 0
+
+
+#Expected: 12

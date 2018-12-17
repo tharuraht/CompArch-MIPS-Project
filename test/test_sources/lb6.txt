@@ -1,0 +1,14 @@
+#lb6
+#lb
+#ta2617
+#calls PUTC
+#245
+#
+#
+
+addi $20, $20, 0x3
+sll $20, $20, 28
+lb $2, 7($20)
+jr $0
+
+#Expected: exit: -11 (245)

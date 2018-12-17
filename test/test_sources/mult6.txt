@@ -1,0 +1,17 @@
+#mult6
+#mult
+#ta2617
+#Multiply two negative numbers
+#50
+#
+#
+
+addi $16, $0, -10
+addi $17, $0, -5
+mult $16, $17
+sll $0, $0, 0
+sll $0, $0, 0
+mflo $2 
+jr $0
+
+#Expected: 48

@@ -1,0 +1,16 @@
+#div7
+#div
+#am9717
+#dividing zero by constant and checks HI
+#0
+#
+#
+
+addi $16, $16, 6
+div $0, $16
+sll $0, $0, 0 
+sll $0, $0, 0  
+mfhi $2
+jr $0
+
+#Expected: 0

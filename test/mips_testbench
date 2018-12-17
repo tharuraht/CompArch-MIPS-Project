@@ -1,0 +1,71 @@
+#!/bin/bash
+
+simPath=$1
+testPath="test"
+srcPath="$testPath/test_sources"
+binPath="$testPath/test_binaries"
+outPath="$testPath/output"
+srcFiles="$srcPath/*.txt"
+binFiles="$binPath/*.bin"
+parserPath="mips-parser/bin/parser"
+
+for f in $srcFiles
+do
+  ( $parserPath "$f" "$binPath/#" ) >/dev/null
+done
+
+# echo -e "Completed.\n" >&2
+
+function mips_testbench()
+{
+rm ${outPath}/* 2> /dev/null     #removes all previous output files
+
+for f in $srcFiles
+do
+  fileData=()
+	while IFS='' read -r line || [[ -n "$line" ]]; do
+      data="${line//#}"
+      fileData+=("$data")
+      #echo $data
+  done < $f
+
+  local testID=${fileData[0]}
+  #echo "$testID"
+  local testType=${fileData[1]}
+  #echo "$testType"
+  local author=${fileData[2]}
+  #echo "$author"
+  local message=${fileData[3]}
+  #echo "$message"
+  local expected_output=${fileData[4]}
+  #echo "$expected_output"
+  local input=${fileData[5]}
+  #echo $input
+  local expected_output_PUTC=${fileData[6]}
+  #echo $expected_output_PUTC
+
+    simout=$(echo $input | $simPath "$binPath/$testID.bin")
+    exit_code=$?
+    # local message="sim exit code $exit_code"
+
+    local result="fail"
+    if [ "$exit_code" = "$expected_output" ]; then
+      if [ "$simout" = "$expected_output_PUTC" ]; then
+          result="pass"
+      else
+        message+=" output was '$simout', expected '$expected_output_PUTC'" >&2
+      fi
+    else
+      local message+=" , received output $exit_code wanted $expected_output"
+        # result="pass"
+        # local message+=" received output $exit_code, wanted $expected_output"
+    fi
+
+    local PrintResult="${testID}, ${testType}, ${result}, ${author}, ${message}"
+    echo "$PrintResult"
+done
+  #./bin/mips_simulator $binFiles      //pass the binary file to the simulator
+#done
+}
+
+mips_testbench

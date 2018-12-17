@@ -1,0 +1,16 @@
+#bgtz3
+#bgtz
+#ta2617
+#Case: rs == 0
+#0
+#
+#
+
+addi $2, $2, 1
+addi $2, $2, -1
+bgtz $2, 8
+sll $0, $0, 0
+jr $0
+sll $0, $0, 0
+
+#Expected: 0

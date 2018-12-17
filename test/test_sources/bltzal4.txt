@@ -1,0 +1,17 @@
+#bltzal4
+#bltzal
+#am9717
+#Checks case rs=0 (no BLTZAL but still BEQ)
+#1
+#
+#
+
+addi $2, $2, 0
+bltzal $2, 8
+sll $0, $0, 0
+addi $2, $2, 1
+beq $0, $31, -5
+nop
+jr $0
+
+#Expected: 1

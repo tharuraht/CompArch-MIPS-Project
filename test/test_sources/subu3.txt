@@ -1,0 +1,14 @@
+#subu3
+#subu
+#am9717
+#SUBU of pos and neg no
+#128
+#
+#
+
+addi $16, $16, 120
+addi $17, $17, -8
+subu $2, $16, $17
+jr $0
+
+#Expected: 128

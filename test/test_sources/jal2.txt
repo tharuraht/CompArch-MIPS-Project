@@ -1,0 +1,17 @@
+#jal2
+#jal
+#am9717
+#Jumps to outside range
+#245
+#
+#
+
+addi $2, $2, 2
+sll $0, $0, 0
+addi $2, $2, 2
+jal -8
+sll $0, $0, 0
+jr $0
+sll $0, $0, 0
+
+#Expected: 245

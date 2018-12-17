@@ -1,0 +1,14 @@
+#subu1
+#subu
+#am9717
+#Normal SUBU operation
+#252
+#
+#
+
+addi $16, $16, 1024
+addi $17, $17, 4
+subu $2, $16, $17
+jr $0
+
+#Expected: 252

@@ -1,0 +1,14 @@
+#subu4
+#subu
+#am9717
+#Subtraction overflow
+#1
+#
+#
+
+addiu $16, $16, 0xFFFFFFF
+subu $2, $0, $16
+jr $0
+sll $0, $0, 0
+
+#Expected: 1

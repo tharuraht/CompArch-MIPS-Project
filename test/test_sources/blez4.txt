@@ -1,0 +1,17 @@
+#blez4
+#blez
+#ta2617
+#Case: rs > 0
+#6
+#
+#
+
+addi $2, $2, 4
+blez $2, 12
+sll $0, $0, 0
+addi $2, $2, 2
+sll $0, $0, 0
+jr $0
+sll $0, $0, 0
+
+#Expected: 6

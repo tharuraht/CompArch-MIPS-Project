@@ -1,0 +1,14 @@
+#xori3
+#xori
+#am9717
+#Checks XORI zero extension 
+#240
+#
+#
+
+addi $16, $16, 0xFFFF
+xori $2, $16, 0xF
+jr $0
+
+#Expected: 0xFFF0 (240)
+

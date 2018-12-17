@@ -1,0 +1,15 @@
+#bgezal4
+#bgezal
+#ta2617
+#Case: rs < 0
+#0
+#
+#
+
+addi $16, $16, -5
+bgezal $16, -20
+addi $31, $0, 0
+sll $0, $0, 0
+jr $0
+
+#Expected: 0
