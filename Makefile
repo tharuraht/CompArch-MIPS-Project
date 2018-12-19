@@ -35,3 +35,4 @@ clean:
 	rm bin/mips_simulator
 	rm bin/mips_testbench
 	rm mips-parser/bin/parser
+	rm test/test_binaries/*.bin
